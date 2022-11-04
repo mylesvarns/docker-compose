@@ -29,7 +29,7 @@ services:
     ulimits:
       nofile: 2048
     environment:
-      - "VIRTUAL_HOST=mqtt.example.com"
+      - "VIRTUAL_HOST=mqtt.localhost"
       - "VIRTUAL_PORT=1884"
     volumes:
       - "./broker/mosquitto.conf:/etc/mosquitto/mosquitto.conf"
@@ -41,7 +41,7 @@ services:
       - flowforge
     restart: always
     environment:
-      - "VIRTUAL_HOST=forge.example.com"
+      - "VIRTUAL_HOST=localhost"
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock"
       - "./etc/flowforge.yml:/usr/src/forge/etc/flowforge.yml"
